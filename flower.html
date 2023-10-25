@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Flower</title>
+        <Style>
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                background-color: rgba(3, 12, 5, 0.973);
+            }
+            .flower{
+               height: 300px;
+               width: 300px;
+               position: relative; 
+            }
+            .flower span{
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;              
+                transform: rotate(calc(36deg*var(--i)));  
+            }
+            .flower span::before{
+                content: '';
+                position: absolute;
+                height: 25px;
+                width: 25px;
+                border-radius: 2px 50%;
+                box-sizing: border-box;
+                border: 4px solid white;
+                box-shadow: 0 0 20px white,
+                -30px -30px 0 white,
+                -30px -30px 20px white,
+                30px 30px 0 white,
+                30px 30px 20px white,
+                30px -30px 0 white,
+                30px -30px 20px white,
+                -30px 30px 0 white,
+                -30px 30px 20px white;
+                animation:  flower 5s infinite linear;
+                transform-origin: 100px;
+            }
+            @keyframes flower {
+                0%{
+                    transform: rotate(0deg);
+                    filter: hue-rotate(0deg);
+                }
+                100%{
+                    transform: rotate(360deg);
+                    filter: hue-rotate(360deg);
+                }
+            }
+        </Style>
+    </head>
+    <Body>
+        <Div class="flower">
+            <span style="--i:1"></span>
+            <span style="--i:2"></span>
+            <span style="--i:3"></span>
+            <span style="--i:4"></span>
+            <span style="--i:5"></span>
+            <span style="--i:6"></span>
+            <span style="--i:7"></span>
+            <span style="--i:8"></span>
+            <span style="--i:9"></span>
+            <span style="--i:10"></span>
+        </Div>
+    </Body>
+</html>
